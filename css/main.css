@@ -1,0 +1,21 @@
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.jumbotron {
+  height: 80vh;
+  background-position: center center; 
+  background-attachment: fixed; 
+  background-repeat: no-repeat; background-size: cover; 
+  background-image: url(/assets/bg-img-min.png);
+}
+
+.container-fluid {
+  padding-left: 0px !important;
+}
+
+.navbar-brand img {
+  width: 150px;
+  height: 50px;
+}

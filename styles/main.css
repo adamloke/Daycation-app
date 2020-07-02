@@ -44,7 +44,7 @@
     opacity: 0.7;
 }
 
-.filter-bar {
+.filterBar {
     display: flex;
     justify-content: space-around;
     align-content: space-around;
@@ -73,7 +73,7 @@
 
 .btn.active {
     background-color: cyan;
-    color: white;
+    color: black;
 }
 
 
@@ -105,8 +105,12 @@ textarea {
     }
     .card {
         margin: 50px;
+        transition: transform .2s;
     }
     .card-container {
         margin: 100px;
+    }
+    .card:hover {
+        transform: scale(1.3);
     }
 }

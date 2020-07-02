@@ -1,14 +1,112 @@
-.jumbotron {
-  height: 80vh;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(/assets/bg-img-min.png);
+/* Heroe style*/
+
+.heroe {
+    height: 800px;
+    text-align: center;
+    background-image: url(https://d12dkjq56sjcos.cloudfront.net/pub/media/wysiwyg/budapest/01-city-landing/BBT-Budapest-City-Landing-Night-View.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.navbar-brand img {
-  width: 150px;
-  height: 50px;
+
+/* Filter and item cards*/
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    background-color: rgb(245, 227, 227);
 }
-/*# sourceMappingURL=main.css.map */
+
+.card {
+    box-shadow: silver 1 4px 8px 0;
+    max-width: 400px;
+    padding: 12px;
+    text-align: center;
+    font-family: Helvetica;
+}
+
+.card button {
+    border: none;
+    outline: 1px;
+    padding: 6px;
+    width: 100%;
+    font-size: 16px;
+    color: snow;
+    background-color: rgb(212, 199, 182);
+    text-align: center;
+    cursor: pointer;
+    align-self: center;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: row wrap;
+    color: yellowgreen;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.show {
+    display: block;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 12px 16px;
+    border: none;
+    outline: antiquewhite;
+    background-color: beige;
+}
+
+.btn:hover {
+    background-color: cornflowerblue;
+}
+
+.btn.active {
+    background-color: cyan;
+    color: white;
+}
+
+
+/* Rewiw section */
+
+.fas {
+    color: orange;
+}
+
+.review {
+    height: 250px;
+    width: 300px;
+}
+
+input[type=text],
+textarea {
+    padding: 12px;
+    border: plum solid 1px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+@media only screen and (min-width: 768px) {
+    .card button {
+        width: 180px;
+        font-size: 18px;
+        padding: 12px;
+    }
+    .card {
+        margin: 50px;
+    }
+    .card-container {
+        margin: 100px;
+    }
+}

@@ -1,3 +1,5 @@
+//Filter function
+console.log("text");
 filterSelection("all")
 
 function filterSelection(c) {
@@ -33,12 +35,12 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-var filterBar = document.getElementById(btnContainer);
+var filterBar = document.getElementById("btnContainer");
 var btns = filterBar.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
         var current = document.getElementsByClassName("active");
-        current[0].className = current.className.replace(" active", "");
+        current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
     });
 }

@@ -1,9 +1,9 @@
 // Map function
 
 function initMap() {
-    var location = { lat: 47.195242, lng: 18.596261 };
-    var map = new google.maps.Map(document.getElementById("map"), { zoom: 6, center: location });
-    var marker = new google.maps.Marker({ position: location, map: map });
+    let location = { lat: 47.195242, lng: 18.596261 };
+    let map = new google.maps.Map(document.getElementById("map"), { zoom: 6, center: location });
+    let marker = new google.maps.Marker({ position: location, map: map });
 }
 
 // Travel options dropdown
@@ -13,14 +13,43 @@ function dropdownFunction() {
 }
 
 window.onclick = function(event) {
-    if (!event.target.matches('.drop-button')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
+    if (!event.target.matches('drop-button')) {
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        let i;
         for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
+            let openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
         }
     }
+}
+
+// Carousel without Bootstrap
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("imgSlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }

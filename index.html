@@ -1,167 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Daycation Budapest</title>  
-
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-    
-  </head>
-  <body>
-
-    <div class="jumbotron">
-      <div class="container">
-        <nav class="navbar">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <img alt="Brand" src="assets/Logotype.svg">
-              </a>
-            </div>
-          </div>
-        </nav>
-        <div class="container">
-          <h1>Popular day trips near Budapest.</h1>
-          <p>Staycations are more affordable and safer than a vacation involving traveling. Enjoy your weekend with no lodging costs and minimal travel expenses.</p>
-          <div class="container">
-            <img src="/assets/virus.svg" width="30" height="30" class="d-inline-block align-top" alt="Icon">
-            <p>All recommendations are COVID19 safe.</p>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  
+</head>
+<body>
+  <! --- Hero --->
+  <div class="hero w-screen">
+    <div class="max-w-screen-xl mx-auto px-4 py-12">
+      <nav class="mx-auto">
+        <img class="w-32" src="/assets/Logotype.svg" alt="Brand">
+      </nav>
+      <div class="my-16">
+        <h1 class="text-6xl font-bold text-white">Popular day trips near Budapest.</h1>
+        <h2 class="max-w-4xl my-6 text-2xl text-white">Find popular day trips near Budapest curated by local guides. Search by category and sort by rating, travel time, and cost.</h2>
+      </div>
+      <div class="my-4">
+        <a href="#filterbuttons"><button class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 border border-red-600 hover:border-transparent rounded">Plan your day trip</button></a>
       </div>
     </div>
-
-     <!-- Filter --> 
-
-    <div class="container">
-      <div class="container">
-        <h2>Find your day trip:</h2>
+  </div>
+  <! ---  Filter --->
+  <div id="filterbuttons" class="max-w-screen-xl mx-auto px-4 py-8">
+    <div class=""><h1 class="text-3xl font-semibold text-black">Find your day trip:</h1></div>
+    <div class="flex justify-between items-center py-6 border-b-2 border-black">
+      <div class="flex-row justify-start">
+        <button class="border border-black text-black text-semibold hover:border-2 hover:border-red-600 hover:text-red-600 focus:outline-none mr-2 py-2 px-4 rounded-full btn active" onclick="filter('all')">All</button>
+        <button class="border border-black text-black text-semibold hover:border-2 hover:border-red-600 hover:text-red-600 focus:outline-none mr-2 py-2 px-4 rounded-full btn" onclick="filter('beach')">Beach</button>
+        <button class="border border-black text-black text-semibold hover:border-2 hover:border-red-600 hover:text-red-600 focus:outline-none mr-2 py-2 px-4 rounded-full btn" onclick="filter('hiking')">Hiking</button>
+        <button class="border border-black text-black text-semibold hover:border-2 hover:border-red-600 hover:text-red-600 focus:outline-none mr-2 py-2 px-4 rounded-full btn" onclick="filter('foodie')">Foodie</button>
+        <button class="border border-black text-black text-semibold hover:border-2 hover:border-red-600 hover:text-red-600 focus:outline-none mr-2 py-2 px-4 rounded-full btn" onclick="filter('family')">Family</button>
+        <button class="border border-black text-black text-semibold hover:border-2 hover:border-red-600 hover:text-red-600 focus:outline-none py-2 px-4 rounded-full btn" onclick="filter('dogs')">Dogs</button>
       </div>
-      <div class="container">
-        <div class="nav-btn-list">
-          <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">All</a></li>
-            <li role="presentation"><a href="#">Beach</a></li>
-            <li role="presentation"><a href="#">Hiking</a></li>
-            <li role="presentation"><a href="#">Sightseeing</a></li>
-            <li role="presentation"><a href="#">Foodie</a></li>
-            <li role="presentation"><a href="#">Family friendly</a></li>
-            <li role="presentation"><a href="#">Dog friendly</a></li>
-          </ul>
-        </div>
-        <div class="filter-sort-dropdown">
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger">Popular</button>
-            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Popular</a></li>
-              <li><a href="#">Distance</a></li>
-              <li><a href="#">Price</a></li>
-            </ul>
+      <div class="flex">
+        <div class="inline-block relative w-32">
+          <select class="block appearance-none w-full bg-white border border-black px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+            <option>Popular</option>
+            <option>Time</option>
+            <option>Cost</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
           </div>
         </div>
+
       </div>
     </div>
+  </div>
+  <! --- Cards --->
+  <div id="cardlist" class="flex justify-between flex-wrap mx-auto max-w-screen-xl content-between px-4 py-8"></div>
+  <footer>
 
-    <!-- Item List --> 
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="https://via.placeholder.com/150" alt="...">
-            <div>
-              <h3 id="article0Title"></h3>
-              <p id="article0Lead"></p>
-              <p><a href="#" class="btn btn-primary" role="button">See day trip</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="https://via.placeholder.com/150" alt="...">
-            <div class="caption">
-              <h3>Title here</h3>
-              <p>Placeholder.com is a free image placeholder service for web designers, serving billions and billions of images each year.</p>
-              <p><a href="#" class="btn btn-primary" role="button">See day trip</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="https://via.placeholder.com/150" alt="...">
-            <div class="caption">
-              <h3>Title here</h3>
-              <p>Placeholder.com is a free image placeholder service for web designers, serving billions and billions of images each year.</p>
-              <p><a href="#" class="btn btn-primary" role="button">See day trip</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <div class="container">
-        <div class="footer-brand">
-            <a class="navbar-brand" href="#">
-              <img alt="Brand" src="assets/Logotype.svg">
-            </a>
-            <p>Placeholder.com is a free image placeholder service for web designers, serving billions and billions of images each year.</p>
-        </div>
-        <div class="footer-list">
-          <div class="media">
-            <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="https://via.placeholder.com/30x30" alt="...">
-              </a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Firstname Lastname</h4>
-              <p>Placeholder.com is a free image placeholder service for web designers, serving billions and billions of images each year.</p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="https://via.placeholder.com/30x30" alt="...">
-              </a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Firstname Lastname</h4>
-              <p>Placeholder.com is a free image placeholder service for web designers, serving billions and billions of images each year.</p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="https://via.placeholder.com/30x30" alt="...">
-              </a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">Firstname Lastname</h4>
-              <p>Placeholder.com is a free image placeholder service for web designers, serving billions and billions of images each year.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    
-
-
-
-    <!-- JavaScript -->
-    <script type="module" src="js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+  </footer>
+</body>
+<script src="/js/main.js"></script>
 </html>

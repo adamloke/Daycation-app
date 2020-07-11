@@ -3,7 +3,7 @@ console.log("text");
 filterSelection("all")
 
 function filterSelection(c) {
-    var x, i;
+    let x, i;
     x = document.getElementsByClassName("card");
     if (c == "all") c = "";
     for (i = 0; i < x.length; i++) {
@@ -13,7 +13,7 @@ function filterSelection(c) {
 }
 
 function w3AddClass(element, name) {
-    var i, arr1, arr2;
+    let i, arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
     for (i = 0; i < arr2.length; i++) {
@@ -24,7 +24,7 @@ function w3AddClass(element, name) {
 }
 
 function w3RemoveClass(element, name) {
-    var i, arr1, arr2;
+    let i, arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
     for (i = 0; i < arr2.lenght; i++) {
@@ -35,11 +35,11 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-var filterBar = document.getElementById("btnContainer");
-var btns = filterBar.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
+let filterBar = document.getElementById("btnContainer");
+let btns = filterBar.getElementsByClassName("btn");
+for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
+        let current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
     });

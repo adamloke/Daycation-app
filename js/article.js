@@ -9,16 +9,18 @@ function initMap() {
 // Travel options dropdown
 
 function dropdownFunction() {
-    document.getElementById("travel-dropdown").classList.toggle("show");
+    console.log(document.getElementById("travel-dropdown").classList);
+    document.getElementById("travel-dropdown").classList.add("show");
 }
 
 window.onclick = function(event) {
-    if (!event.target.matches('drop-button')) {
+    console.log(event.target.matches('.link'));
+    if (!document.getElementsByClassName("dropdown-content")[0].contains(event.target)) {
         let dropdowns = document.getElementsByClassName("dropdown-content");
         let i;
         for (i = 0; i < dropdowns.length; i++) {
             let openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
+            if (!openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
         }

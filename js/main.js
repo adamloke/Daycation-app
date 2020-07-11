@@ -97,9 +97,10 @@ document.getElementById("cardlist").innerHTML = `${articleArr.map(card).join('')
 
 // Filter cards 
 filter("all")
+
 function filter(val) {
   let x = document.getElementsByClassName("category");
-  if (val == "all") val = "";
+  if (val == "all") val = ""; //???
    // Add and remove "show" class.
     for(let i = 0; i < x.length; i++){
       removeClass(x[i], "show");
@@ -136,19 +137,27 @@ let btnGroup = filterButtons.getElementsByClassName("btn");
 for (var i = 0; i < btnGroup.length; i++) {
   btnGroup[i].addEventListener("click", function() {
   let current = document.getElementsByClassName("active");
-  console.log(current)
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
 }
 
-// Sorting cards
+
+
+
+
+
+// Sorting cards [NOT WORKING!!!]
 function sortCards(val){
   let a = Array.from(document.querySelectorAll(val));
   let b = Array.from(a);
   let sorted = b.sort((a, b) => a.dataset.value - b.dataset.value).reverse();
   sorted.forEach(e => {document.getElementById("cardlist").appendChild(e);});
   };
+
+
+
+
 
 // add category tags for each card
 function tag(tag){

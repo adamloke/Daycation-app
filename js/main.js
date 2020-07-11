@@ -148,8 +148,10 @@ for (var i = 0; i < btnGroup.length; i++) {
 
 
 // Sorting cards [NOT WORKING!!!]
+
+
 function sortCards(val){
-  let a = Array.from(document.querySelectorAll(val));
+  let a = document.querySelectorAll(val);
   let b = Array.from(a);
   let sorted = b.sort((a, b) => a.dataset.value - b.dataset.value).reverse();
   sorted.forEach(e => {document.getElementById("cardlist").appendChild(e);});

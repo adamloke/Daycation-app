@@ -1,5 +1,5 @@
-// array with articles
-const articleArr = [
+// array with day trips
+const trips = [
   {
   image: "/assets/img-beach.jpg",
   title: "Place number 1",
@@ -92,76 +92,58 @@ const articleArr = [
   },
 ];
 
-// add cards to div.cardlist
-document.getElementById("cardlist").innerHTML = `${articleArr.map(card).join('')}` 
+// ------- FITLER CARDS ------ //
 
-// Filter cards 
-filter("all")
-
-function filter(val) {
-  let x = document.getElementsByClassName("category");
-  if (val == "all") val = ""; //???
-   // Add and remove "show" class.
-    for(let i = 0; i < x.length; i++){
-      removeClass(x[i], "show");
-      if (x[i].className.indexOf(val) > -1) appendClass(x[i],"show");
-    }
-}
-
-// Filter cards - Show elements by adding class "show"
-function appendClass(element, name) {
-  let arr1 = element.className.split(" ");
-  let arr2 = name.split(" ");
-  for (let i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
+let filteredArray = [];
+// loops through trips array to see if selectedCategory exist in each object
+function filterTripsByCategory(category){
+  if(category === 'all') {
+    return trips;
   }
-}
-
-// Filter cards - Hide elements by removing class "show"
-function removeClass(element, name) {
-  let arr1 = element.className.split(" ");
-  let arr2 = name.split(" ");
-  for (let i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
+  for (let i = 0; i < trips.length; i++) {
+    if(trips[i].category.indexOf(category) > -1) {
+      filteredArray.push(trips[i]);
+    };
   }
-  element.className = arr1.join(" ");
-}
+  return filteredArray;
+};
+// eventlistener for all filter buttons
+let filterSelect = document.getElementById('filterSelect');
+filterSelect.addEventListener('click', filterSelectedCategory);
 
-// Filter cards - Add active class to the current control button
-let filterButtons = document.getElementById("filterbuttons");
-let btnGroup = filterButtons.getElementsByClassName("btn");
-for (var i = 0; i < btnGroup.length; i++) {
-  btnGroup[i].addEventListener("click", function() {
+// remove current cards, filter by category, insert result 
+function filterSelectedCategory(e){
+  let selectedCategory = e.target.dataset.value; // selected category from button data-value
+  document.getElementById("cardlist").innerHTML = []; // remove current cards
+  filteredArray = [];
+  filterTripsByCategory(selectedCategory) // filter trips based on selected category
+    if(selectedCategory === 'all') { // checks if "all" button is selected
+      return document.getElementById("cardlist").innerHTML = `${trips.map(card).join('')}` // insert default array
+    }
+      return document.getElementById("cardlist").innerHTML = `${filteredArray.map(card).join('')}` // insert new array
+};
+
+// add and remove active class on btn click
+let filterGroup = document.getElementById("filterGroup");
+let filterButtons = filterGroup.getElementsByClassName("btn");
+for (var i = 0; i < filterButtons.length; i++) {
+  filterButtons[i].addEventListener("click", function() {
   let current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
 }
 
+// ------ SORT CARDS ---- // 
 
+/*function sortTrips(value){
+  trips.sort((a, b) => a.value - b.value).reverse();
+}*/
 
+// ----- ADD CARDS ------ // 
 
-
-
-// Sorting cards [NOT WORKING!!!]
-
-
-function sortCards(val){
-  let a = document.querySelectorAll(val);
-  let b = Array.from(a);
-  let sorted = b.sort((a, b) => a.dataset.value - b.dataset.value).reverse();
-  sorted.forEach(e => {document.getElementById("cardlist").appendChild(e);});
-  };
-
-
-
-
-
-// add category tags for each card
+document.getElementById("cardlist").innerHTML = `${trips.map(card).join('')}` 
+// add trips.category pills to each cards
 function tag(tag){
   return `${tag.map((tag) =>{
     return `
@@ -169,7 +151,7 @@ function tag(tag){
     `}).join('')}
   `};
 
-// add category tags as class names for each card
+// add trips.category as class name 
   function addClass(tag){
     return `${tag.map((tag) =>{
       return `
@@ -177,21 +159,21 @@ function tag(tag){
       `}).join('')}
     `};
 
-// create cards from /article 
-function card(article) {
+// create cards
+function card(trips) {
   return `
-  <div class="category ${article.category ? addClass(article.category) : ''} flex-col mx-auto my-4 max-w-sm rounded overflow-hidden shadow-lg" data-value="${article.value}" data-time="${article.time}" data-cost="${article.cost}">
-      <img class="w-full" src="${article.image}" alt="image">
+  <div class="category ${trips.category ? addClass(trips.category) : ''} flex-col mx-auto my-4 max-w-sm rounded overflow-hidden shadow-lg" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
+      <img class="w-full" src="${trips.image}" alt="image">
     <div class="px-6 py-4">
-      <div class="font-bold text-2xl">${article.title}</div>
-      <div class="py-4">${article.category ? tag(article.category) : ''}</div>
+      <div class="font-bold text-2xl">${trips.title}</div>
+      <div class="py-4">${trips.category ? tag(trips.category) : ''}</div>
         <div class="flex items-center py-2">
           <div class="flex items-center border-solid border-r-2 border-gray-300 pr-4 mr-4">
-          <img class="h-3 w-3 mr-2" src="/assets/star.svg" alt="star"><strong>${article.value}</strong></div>
-          <div class="flex border-solid border-r-2 border-gray-300 pr-4 mr-4"><strong>${article.time} hours</strong></div>
-          <div class="flex"><strong>${article.cost} HUF</strong></div>
+          <img class="h-3 w-3 mr-2" src="/assets/star.svg" alt="star"><strong>${trips.value}</strong></div>
+          <div class="flex border-solid border-r-2 border-gray-300 pr-4 mr-4"><strong>${trips.time} hours</strong></div>
+          <div class="flex"><strong>${trips.cost} HUF</strong></div>
         </div>
-          <p class=" min-h-full text-gray-700 text-base py-2">${article.lead}</p>
+          <p class=" min-h-full text-gray-700 text-base py-2">${trips.lead}</p>
         <div class="py-4">
           <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">See day trip</button>
         </div>

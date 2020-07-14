@@ -5,14 +5,15 @@
   background-repeat: no-repeat; background-size: cover; 
   background-image: url(/assets/bg.png);
 }
-.category {
+
+/*.category {
   display: none;
-/* elements hidden by default */
-}
-.show {
+}*/
+/*.show {
   display: block;
-/* Class is added to the filtered elements */
-}
+}*/
+
+
 /* Add a dark background to the active button */
 .btn.active {
   background-color: #E53E3E;

@@ -107,21 +107,22 @@ function filterTripsByCategory(category){
   }
   return filteredArray;
 };
-// eventlistener for all filter buttons
-let filterSelect = document.getElementById('filterSelect');
-filterSelect.addEventListener('click', filterSelectedCategory);
 
 // remove current cards, filter by category, insert result 
 function filterSelectedCategory(e){
-  let selectedCategory = e.target.dataset.value; // selected category from button data-value
-  document.getElementById("cardlist").innerHTML = []; // remove current cards
+  let selectedCategory = e.target.dataset.value; // selected category
+  document.getElementById("cardlist").innerHTML = []; 
   filteredArray = [];
-  filterTripsByCategory(selectedCategory) // filter trips based on selected category
-    if(selectedCategory === 'all') { // checks if "all" button is selected
-      return document.getElementById("cardlist").innerHTML = `${trips.map(card).join('')}` // insert default array
+  filterTripsByCategory(selectedCategory) // filter trips 
+    if(selectedCategory === 'all') { 
+      checkSorting(trips); // insert default trips array
     }
-      return document.getElementById("cardlist").innerHTML = `${filteredArray.map(card).join('')}` // insert new array
+      checkSorting(filteredArray)// insert new filtered array
 };
+
+// eventlistener filter buttons
+let filterSelect = document.getElementById('filterSelect');
+filterSelect.addEventListener('click', filterSelectedCategory);
 
 // add and remove active class on btn click
 let filterGroup = document.getElementById("filterGroup");
@@ -136,14 +137,49 @@ for (var i = 0; i < filterButtons.length; i++) {
 
 // ------ SORT CARDS ---- // 
 
-/*function sortTrips(value){
-  trips.sort((a, b) => a.value - b.value).reverse();
-}*/
+// check current sorting 
+function checkSorting(arr){
+  let x = document.getElementById('sortSelect'); 
+  let sorter = x.value; // current value of dropdown
+ 
+  switch(sorter){
+    case 'value':
+      arr.sort((a, b) => a.value - b.value).reverse();
+      return document.getElementById("cardlist").innerHTML = `${arr.map(createCards).join('')}` 
+      break;
+    case 'time':
+      arr.sort((a, b) => a.time - b.time);
+      return document.getElementById("cardlist").innerHTML = `${arr.map(createCards).join('')}` 
+      break;
+    case 'cost':
+      arr.sort((a, b) => a.cost - b.cost);
+      return document.getElementById("cardlist").innerHTML = `${arr.map(createCards).join('')}` 
+      break;
+  }
+}
+
+/*
+// create sorting 
+function createSorting(){
+let sorter = this.value; //selected sorting
+console.log(sorter)
+let x = Array.from(document.getElementsByClassName('category'));
+x.sort((a, b) => a.dataset.cost - b.dataset.cost);
+console.log(x)
+
+}
+
+// sorting dropdown onchange event
+document.getElementById('sortSelect').onchange = createSorting;
+*/
 
 // ----- ADD CARDS ------ // 
 
-document.getElementById("cardlist").innerHTML = `${trips.map(card).join('')}` 
-// add trips.category pills to each cards
+// default sort descending values (most popular day trips)
+trips.sort((a, b) => a.value - b.value).reverse();
+document.getElementById("cardlist").innerHTML = `${trips.map(createCards).join('')}` 
+
+// add category pills 
 function tag(tag){
   return `${tag.map((tag) =>{
     return `
@@ -151,7 +187,7 @@ function tag(tag){
     `}).join('')}
   `};
 
-// add trips.category as class name 
+// add category as class name 
   function addClass(tag){
     return `${tag.map((tag) =>{
       return `
@@ -160,7 +196,7 @@ function tag(tag){
     `};
 
 // create cards
-function card(trips) {
+function createCards(trips) {
   return `
   <div class="category ${trips.category ? addClass(trips.category) : ''} flex-col mx-auto my-4 max-w-sm rounded overflow-hidden shadow-lg" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
       <img class="w-full" src="${trips.image}" alt="image">

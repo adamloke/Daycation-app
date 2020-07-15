@@ -155,23 +155,49 @@ function checkSorting(arr){
       arr.sort((a, b) => a.cost - b.cost);
       return document.getElementById("cardlist").innerHTML = `${arr.map(createCards).join('')}` 
       break;
+    default:
+     console.log('checkSorting default');
   }
 }
 
-/*
+
 // create sorting 
 function createSorting(){
 let sorter = this.value; //selected sorting
-console.log(sorter)
-let x = Array.from(document.getElementsByClassName('category'));
-x.sort((a, b) => a.dataset.cost - b.dataset.cost);
-console.log(x)
-
+let arr = Array.from(document.getElementById('cardlist').children);
+switch(sorter){
+  case 'value':
+    arr.sort((a, b) => a.dataset.value - b.dataset.value).reverse();
+    for(let i = 0; i < arr.length; i++){
+      let parent = arr[i].parentNode;
+      let removeChild = parent.removeChild(arr[i]);
+      parent.appendChild(removeChild);
+    }
+    break;
+  case 'time':
+    arr.sort((a, b) => a.dataset.time - b.dataset.time);
+    for(let i = 0; i < arr.length; i++){
+      let parent = arr[i].parentNode;
+      let removeChild = parent.removeChild(arr[i]);
+      parent.appendChild(removeChild);
+    }
+    break;
+  case 'cost':
+    arr.sort((a, b) => a.dataset.cost - b.dataset.cost);
+    for(let i = 0; i < arr.length; i++){
+      let parent = arr[i].parentNode;
+      let removeChild = parent.removeChild(arr[i]);
+      parent.appendChild(removeChild);
+    }
+    break;
+  default:
+   console.log('createSorting default');
+}
 }
 
 // sorting dropdown onchange event
 document.getElementById('sortSelect').onchange = createSorting;
-*/
+
 
 // ----- ADD CARDS ------ // 
 

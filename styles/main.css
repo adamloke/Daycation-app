@@ -1,18 +1,10 @@
 .hero{
-  height: 80vh;
+  height: 60vh;
   background-position: center center; 
   background-attachment: fixed; 
   background-repeat: no-repeat; background-size: cover; 
   background-image: url(/assets/bg.png);
 }
-
-/*.category {
-  display: none;
-}*/
-/*.show {
-  display: block;
-}*/
-
 
 /* Add a dark background to the active button */
 .btn.active {

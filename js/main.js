@@ -110,22 +110,21 @@ function filterTripsByCategory(category){
 
 // remove current cards, filter by category, insert result 
 function filterSelectedCategory(e){
+  console.log(e)
   let selectedCategory = e.target.dataset.value; // selected category
   document.getElementById("cardlist").innerHTML = []; 
   filteredArray = [];
   filterTripsByCategory(selectedCategory) // filter trips 
     if(selectedCategory === 'all') { 
-      checkSorting(trips); // insert default trips array
+      checkSorting(trips) // insert default trips array
+    } else {
+        checkSorting(filteredArray)// insert new filtered array
     }
-      checkSorting(filteredArray)// insert new filtered array
+      
 };
 
-// eventlistener filter buttons
-let filterSelect = document.getElementById('filterSelect');
-filterSelect.addEventListener('click', filterSelectedCategory);
-
 // add and remove active class on btn click
-let filterGroup = document.getElementById("filterGroup");
+let filterGroup = document.getElementById("filterSelect");
 let filterButtons = filterGroup.getElementsByClassName("btn");
 for (var i = 0; i < filterButtons.length; i++) {
   filterButtons[i].addEventListener("click", function() {
@@ -135,13 +134,18 @@ for (var i = 0; i < filterButtons.length; i++) {
   });
 }
 
+// eventlistener filter buttons
+let filterSelect = document.getElementById('filterSelect');
+console.log(filterSelect)
+filterSelect.addEventListener('click', filterSelectedCategory);
+
 // ------ SORT CARDS ---- // 
 
 // check current sorting 
 function checkSorting(arr){
   let x = document.getElementById('sortSelect'); 
   let sorter = x.value; // current value of dropdown
- 
+
   switch(sorter){
     case 'value':
       arr.sort((a, b) => a.value - b.value).reverse();

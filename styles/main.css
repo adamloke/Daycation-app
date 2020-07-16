@@ -1,17 +1,1 @@
-.hero{
-  height: 60vh;
-  background-position: center center; 
-  background-attachment: fixed; 
-  background-repeat: no-repeat; background-size: cover; 
-  background-image: url(/assets/bg.png);
-}
-
-/* Add a dark background to the active button */
-.btn.active {
-  background-color: #E53E3E;
-  border-color: #E53E3E;
-  color: white;
-}
-.btn.active:hover {
-  color: #fff;
-}
+/* No CSS *//*# sourceMappingURL=main.css.map */

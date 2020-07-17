@@ -6,6 +6,7 @@ $font-color: #293241;
 $font-spacing: 0.02em;
 $line-height: 1.5em;
 $border-color: #3D5A80;
+$border-light:#cdcdcd;
 $primary-color: #EE6C4D;
 $primary-color-dark:#EA461E;
 
@@ -36,6 +37,8 @@ h4 {
   font-size: 1.875rem;
   color: $font-color;
   letter-spacing: $font-spacing;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 strong {
   font-family: $font-text;
@@ -90,11 +93,11 @@ small {
     color: white;
   }
 }
-.pill {
+.btn {
   font-weight: 400;
   font-size: 1rem;
   background-color: white;
-  border: 1px solid $border-color;
+  border: 1px solid $border-light;
   color: $font-color;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 9999px;
@@ -106,44 +109,14 @@ small {
 .tag {
   font-weight: 700;
   font-size: 0.8rem;
-  background-color:  #D3D3D3;
-  border: 1px solid  #D3D3D3;;
+  background-color: #e7e7e7;
+  border: 1px solid #e7e7e7;
   color: $border-color;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   border-radius: 9999px;
   margin-right: 10px;
 }
-.category {
-  border: 1px solid $border-color;
-  border-radius: 10px;
-  overflow: hidden;
-  margin:auto;
-  max-width: 600px;
-  .card-body {
-    padding: 20px 20px 20px 20px;
-  }
-  .card-row {
-    padding: 20px 0px 20px 0px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid $border-color;
-    .card-row-rank {
-      margin-right: 20px;
-      padding-right: 20px;
-      border-right: 1px solid $border-color;
-      .rank-img {
-        height: 1rem;
-        padding-right: 10px;
-      }
-    }
-    .card-row-time {
-      margin-right: 20px;
-      padding-right: 20px;
-      border-right: 1px solid $border-color;
-    }
 
-  }
-}
 
 /* ------------------------------------- */
 /* Styleguide local styles and variables */
@@ -159,6 +132,7 @@ $sg-title-color: 	#D3D3D3;
 .sg-container {
   width: 100%;
   margin-top: $sg-container-margin;
+  margin-bottom: $sg-container-margin;
   .sg-headline {
     font-family: $font-headline;
     font-size: 6rem;

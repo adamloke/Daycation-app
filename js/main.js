@@ -213,7 +213,7 @@ document.getElementById("cardlist").innerHTML = `${trips.map(createCards).join('
 function tag(tag){
   return `${tag.map((tag) =>{
     return `
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">${tag}</span>
+    <button class="tag">${tag}</button>
     `}).join('')}
   `};
 
@@ -228,21 +228,29 @@ function tag(tag){
 // create cards
 function createCards(trips) {
   return `
-  <div class="category ${trips.category ? addClass(trips.category) : ''} flex-col mx-auto my-4 max-w-sm rounded overflow-hidden shadow-lg" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
-      <img class="w-full" src="${trips.image}" alt="image">
-    <div class="px-6 py-4">
-      <div class="font-bold text-2xl">${trips.title}</div>
-      <div class="py-4">${trips.category ? tag(trips.category) : ''}</div>
-        <div class="flex items-center py-2">
-          <div class="flex items-center border-solid border-r-2 border-gray-300 pr-4 mr-4">
-          <img class="h-3 w-3 mr-2" src="/assets/star.svg" alt="star"><strong>${trips.value}</strong></div>
-          <div class="flex border-solid border-r-2 border-gray-300 pr-4 mr-4"><strong>${trips.time} hours</strong></div>
-          <div class="flex"><strong>${trips.cost} HUF</strong></div>
+    <div class="category ${trips.category ? addClass(trips.category) : ''}" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
+      <img class="card-img" src="${trips.image}" alt="image">
+      <div class="card-body">
+        <h4>${trips.title}</h4>
+        <div class="card-tags">${trips.category ? tag(trips.category) : ''}</div>
+        <div class="card-row">
+          <div class="card-row-rank">
+            <img class="rank-img" src="/assets/star.svg" alt="star">
+            <strong>${trips.value}</strong>
+          </div>
+          <div class="card-row-time">
+            <strong>${trips.time} hr</strong>
+          </div>
+          <div class="card-row-cost">
+            <strong>${trips.cost} HUF</strong>
+          </div>
         </div>
-          <p class=" min-h-full text-gray-700 text-base py-2">${trips.lead}</p>
-        <div class="py-4">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">See day trip</button>
+        <div class="card-text">
+          <p>${trips.lead}</p>
+          <div class="card-cta">
+            <button class="btn__secondary">Read more</button>
+          </div>
         </div>
       </div>
-    </div>
+      </div>
 `}; 

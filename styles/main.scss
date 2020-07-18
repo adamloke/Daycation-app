@@ -101,7 +101,7 @@ body {
   }
 }
 
-/* cardlist */
+/* cards */
 
 #cardlist {
   max-width: 1200px;
@@ -114,10 +114,8 @@ body {
   flex-direction: flex-start;
   justify-content: space-around;
   align-content: flex-start;
-
 }
 .category {
-  min-height: 640px;
   max-width: 24rem;
   border: 1px solid $border-light;
   border-radius: 10px;
@@ -129,10 +127,9 @@ body {
     max-height: 14rem;
   }
   .card-body {
-    padding: 0px 20px 20px 20px;
+    padding: 1.5rem;
   }
   .card-row {
-    padding: 20px 0px 0px 0px;
     display: flex;
     align-items: center;
     .card-row-rank {
@@ -150,8 +147,41 @@ body {
       border-right: 1px solid $border-light;
     }
   }
-  .card-text {
-  }
-  .card-cta {
-   }
 }
+
+/* footer */
+
+footer {
+  border-top: 1px solid $border-light;
+  padding: 4rem 1rem 4rem 1rem;
+  margin-top: 4rem;
+  .footer-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin-right: 4rem;
+      .footer-img {
+        width: 8rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .footer-list {
+      
+      ul {
+        list-style: none;
+        padding-inline-start: 0px;
+        li {
+          margin-bottom: .5rem;
+        }
+      }
+    } 
+  }
+}
+

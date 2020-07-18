@@ -231,8 +231,8 @@ function createCards(trips) {
     <div class="category ${trips.category ? addClass(trips.category) : ''}" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
       <img class="card-img" src="${trips.image}" alt="image">
       <div class="card-body">
+      <div class="card-tags">${trips.category ? tag(trips.category) : ''}</div>
         <h4>${trips.title}</h4>
-        <div class="card-tags">${trips.category ? tag(trips.category) : ''}</div>
         <div class="card-row">
           <div class="card-row-rank">
             <img class="rank-img" src="/assets/star.svg" alt="star">
@@ -248,7 +248,7 @@ function createCards(trips) {
         <div class="card-text">
           <p>${trips.lead}</p>
           <div class="card-cta">
-            <button class="btn__secondary">Read more</button>
+            <button class="btn__secondary">See day trip</button>
           </div>
         </div>
       </div>

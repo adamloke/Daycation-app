@@ -8,29 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <! Hero !>
   <div class="hero">
     <div class="hero-inner">
-      <nav>
-        <img class="hero-img" src="/assets/Logotype.svg" alt="Brand">
-      </nav>
+      <nav><img class="hero-img" src="/assets/Logotype.svg" alt="Brand"></nav>
       <div class="hero-title">
         <h1>Find popular day trips near Budapest.</h1>
         <div class="hero-text">
           <p>Daycation is a curated list of day trip recommendations near Budapest. Search by category and sort based on popularity, travel time, and travel cost. Local guides have curated all recommendations.
           </p>
         </div>
-        <div class="hero-btn">
-          <button class="btn__main">See all day trips</button>
-        </div>
+        <div class="hero-btn"><button class="btn__main">See all day trips</button></div>
       </div>
     </div>
   </div>
-  <! Filter !>
   <div class="filter">
-    <div class="filter-headline">
-      <h3>Find your day trip:</h3>
-    </div>
+    <div class="filter-headline"><h3>Find your day trip:</h3></div>
     <div class="filter-wrapper">
       <div class="filter-btn" id="filterSelect">
         <button class="btn active" data-value="all">All</button>
@@ -49,10 +41,23 @@
       </div>
     </div>
   </div>
-  <! Cards !>
   <div id="cardlist"></div>
   <footer>
-
+    <div class="footer-wrapper">
+      <div class="footer-brand">
+        <img class="footer-img" src="/assets/Logotype.svg" alt="Brand">
+        <p>Daycation is a simple web app built with vanilla js during the first weeks of Wild Code School. The purpose with the app is to help people find fun and safe day trips near their home town.</p>
+      </div>
+      <div class="footer-list">
+        <ul>
+          <p>Links:</p>
+          <li><a href="/styleguide.html">Styleguide</a></li>
+          <li><a href="https://github.com/adamloke/daycation-app">Repository</a></li>
+          <li><a href="https://github.com/adamloke">Github: Adam Loke</a></li>
+          <li><a href="https://github.com/Richard-Kalmar">Github: Richard Karlmar</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
 </body>
 <script src="/js/main.js"></script>

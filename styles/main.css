@@ -70,11 +70,13 @@ small {
   color: white;
   padding: 0.75rem 1.25rem 0.75rem 1.25rem;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .btn__main:hover {
   border-color: #EA461E;
   background-color: #EA461E;
+  color: white;
 }
 
 .btn__secondary {
@@ -85,6 +87,7 @@ small {
   color: #293241;
   padding: 0.75rem 1.25rem 0.75rem 1.25rem;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .btn__secondary:hover {
@@ -203,14 +206,14 @@ body {
 }
 
 /* filter  */
-.filter {
+#filter {
   max-width: 1200px;
   padding: 1rem 1rem 1rem 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.filter .filter-wrapper {
+#filter .filter-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -230,7 +233,7 @@ body {
   padding-bottom: 20px;
 }
 
-.filter .filter-wrapper .filter-btn {
+#filter .filter-wrapper .filter-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,33 +244,33 @@ body {
       flex-wrap: wrap;
 }
 
-.filter .filter-wrapper .filter-btn .btn {
+#filter .filter-wrapper .filter-btn .btn {
   margin-right: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.filter .filter-wrapper .filter-btn .btn:focus {
+#filter .filter-wrapper .filter-btn .btn:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 2px #5e9ed6;
           box-shadow: 0 0 0 2px #5e9ed6;
 }
 
-.filter .filter-wrapper .filter-btn .btn.active {
+#filter .filter-wrapper .filter-btn .btn.active {
   color: #fff;
   background-color: #EE6C4D;
   border-color: #EE6C4D;
 }
 
-.filter .filter-wrapper .filter-btn .btn.active:hover {
+#filter .filter-wrapper .filter-btn .btn.active:hover {
   border-color: #EA461E;
   background-color: #EA461E;
 }
 
-.filter .filter-wrapper .filter-dropdown {
+#filter .filter-wrapper .filter-dropdown {
   margin-top: 1rem;
 }
 
-.filter .filter-wrapper .filter-dropdown .dropdown {
+#filter .filter-wrapper .filter-dropdown .dropdown {
   display: block;
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
@@ -357,6 +360,10 @@ body {
   margin-right: 20px;
   padding-right: 20px;
   border-right: 1px solid #cdcdcd;
+}
+
+.category .card-cta {
+  padding: 1rem 0rem 1rem 0rem;
 }
 
 /* footer */

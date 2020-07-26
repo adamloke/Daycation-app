@@ -1,8 +1,9 @@
 // array with day trips
 const trips = [
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 1",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+0",
+  title: "Day trip 0",
+  url: "/articles/article0.html",
   value: 0.9,
   time: 5.2,
   cost: 1000,
@@ -11,8 +12,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 2",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+1",
+  title: "Day trip 1",
+  url: "/articles/article1.html",
   value: 2.5,
   time: 8.0,
   cost: 8000,
@@ -21,8 +23,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 3",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+2",
+  title: "Day trip 2",
+  url: "/articles/article2.html",
   value: 3.4,
   time: 6.5,
   cost: 500,
@@ -31,8 +34,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 4",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+3",
+  title: "Day trip 3",
+  url: "/articles/article3.html",
   value: 4.5,
   time: 0.5,
   cost: 7000,
@@ -41,8 +45,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 5",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+4",
+  title: "Day trip 4",
+  url: "/articles/article4.html",
   value: 4.9,
   time: 1.0,
   cost: 1500,
@@ -51,8 +56,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 6",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+5",
+  title: "Day trip 5",
+  url: "/articles/article5.html",
   value: 3.8,
   time: 1.1,
   cost: 400,
@@ -61,8 +67,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 7",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+6",
+  title: "Day trip 6",
+  url: "/articles/article6.html",
   value: 1.4,
   time: 9.5,
   cost: 6000,
@@ -71,8 +78,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 8",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+7",
+  title: "Day trip 7",
+  url: "/articles/article7.html",
   value: 4.2,
   time: 2.3,
   cost: 900,
@@ -81,8 +89,9 @@ const trips = [
   text: "some body text here"
   },
   {
-  image: "/assets/img-beach.jpg",
-  title: "Place number 9",
+  image: "https://via.placeholder.com/600x400?text=Day+trip+8",
+  title: "Day trip 8",
+  url: "/articles/article8.html",
   value: 1.4,
   time: 4.5,
   cost: 4500,
@@ -110,7 +119,6 @@ function filterTripsByCategory(category){
 
 // remove current cards, filter by category, insert result 
 function filterSelectedCategory(e){
-  console.log(e)
   let selectedCategory = e.target.dataset.value; // selected category
   document.getElementById("cardlist").innerHTML = []; 
   filteredArray = [];
@@ -135,9 +143,11 @@ for (var i = 0; i < filterButtons.length; i++) {
 }
 
 // eventlistener filter buttons
-let filterSelect = document.getElementById('filterSelect');
-console.log(filterSelect)
-filterSelect.addEventListener('click', filterSelectedCategory);
+let filterSelect = document.getElementsByClassName('btn');
+for(let i = 0; i < filterSelect.length; i++){
+  filterSelect[i].addEventListener('click', filterSelectedCategory);
+};
+
 
 // ------ SORT CARDS ---- // 
 
@@ -160,7 +170,6 @@ function checkSorting(arr){
       return document.getElementById("cardlist").innerHTML = `${arr.map(createCards).join('')}` 
       break;
     default:
-     console.log('checkSorting default');
   }
 }
 
@@ -195,7 +204,6 @@ switch(sorter){
     }
     break;
   default:
-   console.log('createSorting default');
 }
 }
 
@@ -248,7 +256,7 @@ function createCards(trips) {
         <div class="card-text">
           <p>${trips.lead}</p>
           <div class="card-cta">
-            <button class="btn__secondary">See day trip</button>
+            <a class="btn__secondary" href="${trips.url}">See day trip</a>
           </div>
         </div>
       </div>

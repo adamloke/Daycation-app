@@ -70,11 +70,13 @@ small {
   color: white;
   padding: 0.75rem 1.25rem 0.75rem 1.25rem;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .btn__main:hover {
   border-color: #EA461E;
   background-color: #EA461E;
+  color: white;
 }
 
 .btn__secondary {
@@ -85,6 +87,7 @@ small {
   color: #293241;
   padding: 0.75rem 1.25rem 0.75rem 1.25rem;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .btn__secondary:hover {

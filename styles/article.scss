@@ -1,0 +1,238 @@
+.logo {
+    height: 60px;
+    width: 150px;
+    align-self: start;
+}
+
+.article-main-part {
+    display: flex;
+    flex-wrap: column wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.review-container {
+    display: flex;
+    align-self: flex-start;
+}
+
+.article-page-txt {
+    width: 100%;
+    font-family: Helvetica;
+    text-align: left;
+    box-shadow: 10px 10px 10px 10px rgb(192, 192, 191);
+    border-radius: 10px;
+}
+
+.article-page-function-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    box-shadow: 10px 10px 10px 10px rgb(192, 192, 191);
+    border-radius: 10px;
+}
+
+.map-container {
+    min-width: 100px;
+    border: 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    min-height: 100px;
+    /* The height is 400 pixels */
+    min-width: 100px;
+    /* The width is the width of the web page */
+}
+
+.travel-cost {
+    width: 400px;
+    border: 1px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Travel options */
+
+.drop-button {
+    cursor: pointer;
+    padding: 16px;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+.drop-button:hover,
+.drop-button:focus {
+    background-color: darkgray;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: darkseagreen;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: deepskyblue 0px 8px 16px 0px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+
+/* Carouse without Bootstrap */
+
+* {
+    box-sizing: content-box;
+}
+
+.carouse-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    max-height: 850px;
+}
+
+.imgSlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6 ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: yellowgreen;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .article-page-txt {
+        /* width: 60%; */
+        padding: 50px;
+        align-self: flex-start;
+        border: solid 2px rgb(47, 44, 44);
+        margin-right: 100px;
+    }
+    .article-page-function-container {
+        /*  width: 30%; */
+        justify-content: center;
+        align-self: flex-end;
+        border: solid 2px rgb(61, 60, 60);
+    }
+    .article-main-part {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: row wrap;
+        margin: 150px;
+        padding: 20px;
+        /* background-color: aqua; */
+    }
+    .review-container {
+        margin: 150px;
+    }
+    #map {
+        height: 350px;
+        width: 350px;
+    }
+}

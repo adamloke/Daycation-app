@@ -256,7 +256,7 @@ function createCards(trips) {
         <div class="card-text">
           <p>${trips.lead}</p>
           <div class="card-cta">
-            <a class="btn__secondary" href="${trips.url}">See day trip</a>
+            <a class="btn__secondary" href="${trips.url}" target="_blank">See day trip</a>
           </div>
         </div>
       </div>

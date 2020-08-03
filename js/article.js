@@ -22,7 +22,7 @@ function dropdownFunction() {
 }
 
 window.onclick = function(event) {
-    if (!document.getElementsByClassName("drop-button")[0].contains(event.target)) {
+    if (!document.getElementsByClassName("btn__secondary")[0].contains(event.target)) {
         document.getElementById("travel-dropdown").classList.remove("show");
     }
 }
@@ -44,7 +44,6 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("imgSlides");
     let dots = document.getElementsByClassName("dot");
-    console.log(slideIndex);
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
@@ -57,4 +56,83 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// Review section functions
+// REVIEW SECTION
+// Star rating
+let rate = 3;
+const stars = document.getElementsByClassName("rating-star");
+const starId = [];
+for (let i = 0; i < stars.length; i++) {
+    starId.push(stars[i].id)
+}
+starId.forEach(function(element) {
+    document.getElementById(element).addEventListener("click", function() {
+        let marker = document.getElementById(element).id;
+        let counter = starId.indexOf(marker);
+        rate = counter + 1;
+        console.log(marker);
+        for (let i = stars.length; i > counter; i--) {
+            stars[i - 1].classList.remove("fas")
+            stars[i - 1].classList.add("far")
+        }
+        for (let i = 0; i <= counter; i++) {
+            stars[i].classList.add("fas")
+            stars[i].classList.remove("far")
+        }
+        return rate
+    });
+    return rate
+});
+
+// Declaring the review container
+
+reviewContainer = [{
+        name: "Daniel Sunders",
+        rating: 3,
+        review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    {
+        name: "Nikolaj Tropov",
+        rating: 4,
+        review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    {
+        name: "Jose Gavrillo",
+        rating: 5,
+        review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    },
+    {
+        name: "Tanaka Ando",
+        rating: 2,
+        review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    }
+]
+
+// Display the reviews
+let displayReviews = function(reviewContainer) {
+    toDisplay = reviewContainer.map(objects => `
+    <h5><strong>${objects.name}</strong></h5>
+    <h5>${objects.rating} <i class="fas fa-star"></i></h5>
+    <p>${objects.review}</p>
+    <hr>
+    `)
+    return toDisplay.reverse()
+}
+document.getElementById("display").innerHTML = displayReviews(reviewContainer);
+
+//Submit reviews
+
+let submit = document.getElementById("submit-button")
+submit.addEventListener("click", function() {
+    let post = document.forms.reviewForm;
+    let formData = new FormData(post);
+    let user = formData.get("user");
+    let currentRate = rate;
+    let currentReview = formData.get("review");
+    let reviewObject = { name: "", rating: 0, review: "" };
+    reviewObject.name = user;
+    reviewObject.rating = currentRate;
+    reviewObject.review = currentReview;
+    reviewContainer.push(reviewObject);
+    document.getElementById("display").innerHTML = displayReviews(reviewContainer);
+    document.getElementById("reviewForm").reset();
+});

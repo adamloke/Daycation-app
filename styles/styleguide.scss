@@ -1,8 +1,9 @@
-
 /* Global styles and variables */
 
-$font-headline: 'Montserrat', sans-serif;
-$font-text: 'Roboto', sans-serif;
+$font-headline: 'Montserrat',
+sans-serif;
+$font-text: 'Roboto',
+sans-serif;
 $font-color: #293241;
 $font-spacing: 0.02em;
 $line-height: 1.5em;
@@ -10,153 +11,165 @@ $border-color: #3D5A80;
 $border-light:#cdcdcd;
 $primary-color: #EE6C4D;
 $primary-color-dark:#EA461E;
-
+$box-shadow: 6px 8px 10px 6px #dbc7ae;
+$default-border: 3px outset #cdcdcd;
 h1 {
-  font-family: $font-headline;
-  font-weight: 700;
-  font-size: 3.75rem;
-  color: $font-color;
-  letter-spacing: $font-spacing;
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 3.75rem;
+    color: $font-color;
+    letter-spacing: $font-spacing;
 }
-h2 {
-  font-family: $font-headline;
-  font-weight: 700;
-  font-size: 3rem;
-  color: $font-color;
-  letter-spacing: $font-spacing;
-}
-h3 {
-  font-family: $font-headline;
-  font-weight: 700;
-  font-size: 2.25rem;
-  color: $font-color;
-  letter-spacing: $font-spacing;
-}
-h4 {
-  font-family: $font-headline;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: $font-color;
-  letter-spacing: $font-spacing;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-}
-strong {
-  font-family: $font-text;
-  font-weight: 700;
-  font-size: 1rem;
-  color: $font-color;
-  letter-spacing: $font-spacing;
-  line-height: $line-height;
-}
-p {
-  font-family: $font-text;
-  font-weight: 400;
-  font-size: 1rem;
-  color: $font-color;
-  letter-spacing: $font-spacing;
-  line-height: $line-height;
 
+h2 {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 3rem;
+    color: $font-color;
+    letter-spacing: $font-spacing;
 }
+
+h3 {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: $font-color;
+    letter-spacing: $font-spacing;
+}
+
+h4 {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $font-color;
+    letter-spacing: $font-spacing;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+strong {
+    font-family: $font-text;
+    font-weight: 700;
+    font-size: 1rem;
+    color: $font-color;
+    letter-spacing: $font-spacing;
+    line-height: $line-height;
+}
+
+p {
+    font-family: $font-text;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $font-color;
+    letter-spacing: $font-spacing;
+    line-height: $line-height;
+}
+
 small {
-  font-family: $font-text;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #D3D3D3;
-  letter-spacing: $font-spacing;
-  line-height: $line-height;
+    font-family: $font-text;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #D3D3D3;
+    letter-spacing: $font-spacing;
+    line-height: $line-height;
 }
+
 .btn__main {
-  font-weight: 700;
-  font-size: 1.125rem;
-  background-color: $primary-color;
-  border: 1px solid $primary-color;
-  color: white;
-  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
-  border-radius: 10px;
-  text-decoration: none;
-  &:hover {
-    border-color: $primary-color-dark;
-    background-color: $primary-color-dark;
-    color: white;
-  }
-  
-}
-.btn__secondary {
-  font-weight: 400;
-  font-size: 1.125rem;
-  background-color: white;
-  border: 1px solid $border-light;
-  color: $font-color;
-  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
-  border-radius: 10px;
-  text-decoration: none;
-  &:hover {
-    border-color: $primary-color;
+    font-weight: 700;
+    font-size: 1.125rem;
     background-color: $primary-color;
+    border: 1px solid $primary-color;
     color: white;
-  }
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    &:hover {
+        border-color: $primary-color-dark;
+        background-color: $primary-color-dark;
+        color: white;
+    }
 }
+
+.btn__secondary {
+    font-weight: 400;
+    font-size: 1.125rem;
+    background-color: white;
+    border: 1px solid $border-light;
+    color: $font-color;
+    padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    &:hover {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: white;
+    }
+}
+
 .btn {
-  font-weight: 400;
-  font-size: 1rem;
-  background-color: white;
-  border: 1px solid $border-light;
-  color: $font-color;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 9999px;
-  &:hover {
-    border-color: $primary-color;
-    color: $primary-color;
-  }
+    font-weight: 400;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid $border-light;
+    color: $font-color;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 9999px;
+    &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
 }
+
 .tag {
-  font-weight: 700;
-  font-size: 0.8rem;
-  background-color: #e7e7e7;
-  border: 1px solid #e7e7e7;
-  color: $border-color;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-  border-radius: 9999px;
-  margin-right: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    background-color: #e7e7e7;
+    border: 1px solid #e7e7e7;
+    color: $border-color;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border-radius: 9999px;
+    margin-right: 10px;
 }
+
 a {
-  font-family: $font-text;
-  font-size: 1rem;
-  color: $primary-color;
-  font-weight: 400;
-  &:hover {
-    color: $primary-color-dark;
-  }
+    font-family: $font-text;
+    font-size: 1rem;
+    color: $primary-color;
+    font-weight: 400;
+    &:hover {
+        color: $primary-color-dark;
+    }
 }
 
 
 /* ------------------------------------- */
+
+
 /* Styleguide local styles and variables */
 
 $sg-container-margin: 60px;
-$sg-title-color: 	#D3D3D3;
-
+$sg-title-color: #D3D3D3;
 .sg-wrapper {
-  width: 100%;
-  max-width: 960px;
-  margin:auto
+    width: 100%;
+    max-width: 960px;
+    margin: auto
 }
+
 .sg-container {
-  width: 100%;
-  margin-top: $sg-container-margin;
-  margin-bottom: $sg-container-margin;
-  .sg-headline {
-    font-family: $font-headline;
-    font-size: 6rem;
-    color:#000;
-  }
-  .sg-title{
-    font-family: $font-headline;
-    color: $sg-title-color;
-  }
-  hr {
-    border: 1px solid $sg-title-color;
+    width: 100%;
+    margin-top: $sg-container-margin;
     margin-bottom: $sg-container-margin;
-  }
+    .sg-headline {
+        font-family: $font-headline;
+        font-size: 6rem;
+        color: #000;
+    }
+    .sg-title {
+        font-family: $font-headline;
+        color: $sg-title-color;
+    }
+    hr {
+        border: 1px solid $sg-title-color;
+        margin-bottom: $sg-container-margin;
+    }
 }

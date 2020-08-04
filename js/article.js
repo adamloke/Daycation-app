@@ -136,3 +136,21 @@ submit.addEventListener("click", function() {
     document.getElementById("display").innerHTML = displayReviews(reviewContainer);
     document.getElementById("reviewForm").reset();
 });
+
+//Add average rating to the top
+
+let ratingArray = [];
+reviewContainer.map(object => {
+    ratingArray.push(object.rating);
+    return ratingArray
+});
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+let x = ratingArray.reduce(reducer);
+let average = x / ratingArray.length
+console.log(average);
+
+function averageRating(average) {
+    return `<h4><i class="fas fa-star"></i> ${average}</h4>`
+}
+
+document.getElementById("average-rating").innerHTML = averageRating(average);

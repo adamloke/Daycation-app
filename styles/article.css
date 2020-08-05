@@ -163,55 +163,6 @@ a:hover {
   margin-bottom: 60px;
 }
 
-/* The sidebar menu */
-.sidebar {
-  height: 100%;
-  /* 100% Full-height */
-  width: 0;
-  /* 0 width - change this with JavaScript */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111;
-  /* Black*/
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 60px;
-  /* Place content 60px from the top */
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidebar */
-}
-
-/* The sidebar links */
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidebar,
-.closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
 .logo {
   height: 60px;
   width: 150px;
@@ -333,6 +284,7 @@ a:hover {
   padding: 1%;
   -webkit-box-shadow: 6px 8px 10px 6px #dbc7ae;
           box-shadow: 6px 8px 10px 6px #dbc7ae;
+  border: 3px outset #cdcdcd;
   border-radius: 10px;
   margin: 50px 5% 50px 5%;
 }
@@ -514,6 +466,10 @@ a:hover {
 }
 
 @media only screen and (min-width: 768px) {
+  body {
+    max-width: 1600px;
+    margin: auto;
+  }
   .article-main-part {
     display: -webkit-box;
     display: -ms-flexbox;

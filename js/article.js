@@ -12,7 +12,16 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoibG9iby1kZWwtYm9zcXVlIiwiYSI6ImNrZDFobzhkajBjaGYyem53bmg2cTU1OWgifQ.qiriHL0rZUNLWvqLenS8SA'
 }).addTo(myMap);
 // Create markers to places of interest
-let marker = L.marker([47.195242, 18.596261]).addTo(myMap);
+let markerCsutora = L.marker([47.193356, 18.600640]).addTo(myMap);
+markerCsutora.bindPopup("<b>Csutora restaurant</b><br>Great food, mid-high prices. Modern Hungarian cuisine").openPopup();
+let markerVVSI = L.marker([47.195398, 18.597148]).addTo(myMap);
+markerVVSI.bindPopup("<b>VVSI beach</b><br>1200 HUF/day not crowded, good facilities but very little shadow").openPopup();
+let markerRetes = L.marker([47.198180, 18.607687]).addTo(myMap);
+markerRetes.bindPopup("<b>Rétes ház</b><br>Great place to eat rétes(strudle in German). A local pastry. Also a cheap alternative for lunch. Mostly meat and fish").openPopup();
+let markerSzabad = L.marker([47.200279, 18.608235]).addTo(myMap);
+markerSzabad.bindPopup("<b>Free beach</b><br>A very long free beach with acceptable facilities. The parking lot isn't for free").openPopup();
+let markerHalasz = L.marker([47.210897, 18.577970]).addTo(myMap);
+markerHalasz.bindPopup("<b>Szunyog szigeti fish restaurant</b><br>Great food at a beautiful location. It has a huge terrace and you can arrive by boat from the south side of the lake. Not only for fish lovers").openPopup();
 
 
 // Travel options dropdown
@@ -154,3 +163,33 @@ function averageRating(average) {
 }
 
 document.getElementById("average-rating").innerHTML = averageRating(average);
+
+// Fill the time and cost info
+// Later should be modified to take an object and get the key values from there
+
+getTime = function() {
+    return `
+    <h4>Travel time:</h4>
+    <ul>
+    <li>Train: 1200 HUF</li>
+    <li>Bus: none</li>
+    <li>Car: 2500 HUF</li>
+    <li>GreenGo: 12500 HUF</li>
+    </ul>
+    `
+}
+
+getCost = function() {
+    return `
+    <h4>Estimated cost:</h4>
+    <ul>
+    <li>Train: 1.1 h</li>
+    <li>Bus: none</li>
+    <li>Car: 0.25 h</li>
+    <li>GreenGo: 0.25 h</li>
+    </ul>
+    `
+}
+
+document.getElementById("travel-time").innerHTML = getTime();
+document.getElementById("travel-cost").innerHTML = getCost();

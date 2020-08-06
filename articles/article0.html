@@ -17,6 +17,9 @@
     <header class="header">
         <a href="/index.html"><img src="/assets/Logotype.svg" class="logo" alt="logo"></a>
         <h1>Lake Velence</h1>
+        <div class="average-rating">
+            <div id="average-rating"></div>
+        </div>
     </header>
     <div class="carouse-container">
         <div class="imgSlides fade">
@@ -57,12 +60,13 @@
         <div class="article-page-function-container">
             <div class="map-container">
                 <!--Here goes the map function-->
-                <h4>Travel time</h4>
+                <div id="travel-time"></div>
+                <h4>Places of interest</h4>
                 <div id="map"></div>
             </div>
             <div class="travel-cost">
                 <!--Here goes the cost estimation-->
-                <h4>Estimated cost</h4>
+                <div id="travel-cost"></div>
                 <div class="dropdown">
                     <button onclick="dropdownFunction()" class="btn__secondary">Choose a travel option</button>
                     <div id="travel-dropdown" class="dropdown-content">

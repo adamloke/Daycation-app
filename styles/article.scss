@@ -10,19 +10,30 @@
     transform: scale(1.3, 1.3);
 }
 
+.average-rating {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 12%;
+    border-top: 3px solid;
+}
+
 .article-main-part {
     display: flex;
-    flex-wrap: column wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
+    margin: 50px 5% 50px 5%;
 }
 
 .review-container {
     display: flex;
     align-self: flex-start;
-    flex-wrap: row wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
+    margin: 50px 5% 50px 5%;
 }
 
 .read-review {
@@ -54,6 +65,7 @@
     width: 100%;
     font-family: $font-text;
     text-align: left;
+    padding: 20px;
     box-shadow: $box-shadow;
     border-radius: 10px;
 }
@@ -62,14 +74,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding: 20px;
+    justify-content: center;
+    padding: 1%;
     box-shadow: $box-shadow;
-    border-radius: 10px $border-color;
+    border: $default-border;
+    border-radius: 10px;
+    margin: 50px 5% 50px 5%;
 }
 
 .map-container {
-    min-width: 100px;
+    min-width: 200px;
+    width: 100%;
     border: 1px;
     border-radius: 6px;
     display: flex;
@@ -79,10 +94,8 @@
 }
 
 #map {
-    min-height: 100px;
-    /* The height is 400 pixels */
-    min-width: 100px;
-    /* The width is the width of the web page */
+    min-height: 300px;
+    min-width: 250px;
 }
 
 .travel-cost {
@@ -224,33 +237,46 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .article-page-txt {
-        /* width: 60%; */
-        padding: 50px;
-        align-self: flex-start;
-        margin-right: 100px;
-    }
-    .article-page-function-container {
-        /*  width: 30%; */
-        justify-content: center;
-        align-self: flex-start;
-        border: $border-color;
+    body {
+        max-width: 1600px;
+        margin: auto;
     }
     .article-main-part {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        align-content: flex-start;
-        flex-wrap: row wrap;
         margin: 50px 10% 50px 10%;
         padding: 20px;
-        /* background-color: aqua; */
+    }
+    .article-page-txt {
+        display: flex;
+        padding: 50px;
+        margin-right: 100px;
+        width: 50%;
+        margin: 0px 0px 0px 0px;
+    }
+    .article-page-function-container {
+        display: flex;
+        justify-content: center;
+        align-self: flex-start;
+        width: 35%;
+        border: $border-color;
+        margin: 0px 0px 0px 0px;
     }
     .review-container {
+        display: flex;
         margin: 50px 10% 50px 10%;
+        display: flex;
+        flex-wrap: row wrap;
+        justify-content: space-between;
     }
     #map {
-        height: 350px;
-        width: 350px;
+        height: 400px;
+        min-width: 200px;
+        width: 100%;
     }
+    /* body {
+        background-color: red;
+    } */
 }

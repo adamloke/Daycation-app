@@ -369,6 +369,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 1rem;
+  /* footer */
 }
 
 .category .card-img {
@@ -400,24 +401,17 @@ body {
   padding-right: 10px;
 }
 
-.category .card-row .card-row-time {
-  margin-right: 20px;
-  padding-right: 20px;
-  border-right: 1px solid #cdcdcd;
-}
-
-.category .card-cta {
+.category .card-row .card-cta {
   padding: 1rem 0rem 1rem 0rem;
 }
 
-/* footer */
-footer {
+.category footer {
   border-top: 1px solid #cdcdcd;
   padding: 4rem 1rem 4rem 1rem;
   margin-top: 4rem;
 }
 
-footer .footer-wrapper {
+.category footer .footer-wrapper {
   max-width: 1200px;
   margin: auto;
   display: -webkit-box;
@@ -433,7 +427,7 @@ footer .footer-wrapper {
       flex-wrap: wrap;
 }
 
-footer .footer-wrapper .footer-brand {
+.category footer .footer-wrapper .footer-brand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,18 +439,18 @@ footer .footer-wrapper .footer-brand {
   margin-right: 4rem;
 }
 
-footer .footer-wrapper .footer-brand .footer-img {
+.category footer .footer-wrapper .footer-brand .footer-img {
   width: 8rem;
   margin-bottom: 1rem;
 }
 
-footer .footer-wrapper .footer-list ul {
+.category footer .footer-wrapper .footer-list ul {
   list-style: none;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
 }
 
-footer .footer-wrapper .footer-list ul li {
+.category footer .footer-wrapper .footer-list ul li {
   margin-bottom: .5rem;
 }
 /*# sourceMappingURL=main.css.map */

@@ -193,3 +193,14 @@ getCost = function() {
 
 document.getElementById("travel-time").innerHTML = getTime();
 document.getElementById("travel-cost").innerHTML = getCost();
+
+//Navbar
+const menuIcon = document.getElementById("menu-icon")
+menuIcon.addEventListener("click", () => {
+    let x = document.getElementById("topNav");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+})

@@ -29,7 +29,6 @@
 
 .review-container {
     display: flex;
-    align-self: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
@@ -49,7 +48,12 @@
     min-width: 350px;
     width: 40%;
     display: flex;
-    align-content: stretch;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.form {
+    border: $default-border;
 }
 
 #review {
@@ -66,8 +70,8 @@
     font-family: $font-text;
     text-align: left;
     padding: 20px;
-    box-shadow: $box-shadow;
     border-radius: 10px;
+    text-shadow: 0.3px 0.3px 1px gray;
 }
 
 .article-page-function-container {
@@ -76,8 +80,6 @@
     align-items: center;
     justify-content: center;
     padding: 1%;
-    box-shadow: $box-shadow;
-    border: $default-border;
     border-radius: 10px;
     margin: 50px 5% 50px 5%;
 }
@@ -106,6 +108,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#travel-cost,
+#travel-time {
+    text-shadow: 0.3px 0.3px 1px gray;
 }
 
 
@@ -174,6 +181,7 @@
     transition: 0.6 ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    transition: 0.3s;
 }
 
 .next {
@@ -183,7 +191,8 @@
 
 .prev:hover,
 .next:hover {
-    background-color: $primary-color;
+    transform: scale3d(2, 2, 2);
+    ;
 }
 
 .numbertext {
@@ -240,19 +249,19 @@
     body {
         max-width: 1600px;
         margin: auto;
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.24), rgb(255, 255, 255));
     }
     .article-main-part {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        margin: 50px 10% 50px 10%;
+        margin: 50px 8% 50px 6%;
         padding: 20px;
     }
     .article-page-txt {
         display: flex;
         padding: 50px;
-        margin-right: 100px;
         width: 50%;
         margin: 0px 0px 0px 0px;
     }
@@ -261,12 +270,13 @@
         justify-content: center;
         align-self: flex-start;
         width: 35%;
-        border: $border-color;
-        margin: 0px 0px 0px 0px;
+        border: $default-border;
+        margin: 50px 0px 0px 0px;
+        padding: 15px;
     }
     .review-container {
         display: flex;
-        margin: 50px 10% 50px 10%;
+        margin: 50px 10% 50px 12%;
         display: flex;
         flex-wrap: row wrap;
         justify-content: space-between;
@@ -276,7 +286,7 @@
         min-width: 200px;
         width: 100%;
     }
-    /* body {
-        background-color: red;
-    } */
+    .add-review {
+        margin-top: 0px;
+    }
 }

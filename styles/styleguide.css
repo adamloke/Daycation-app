@@ -208,4 +208,53 @@ a:hover {
   -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+
+footer {
+  border-top: 1px solid #cdcdcd;
+  padding: 4rem 1rem 4rem 1rem;
+  margin-top: 4rem;
+}
+
+footer .footer-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .footer-wrapper .footer-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 500px;
+  margin-right: 4rem;
+}
+
+footer .footer-wrapper .footer-brand .footer-img {
+  width: 8rem;
+  margin-bottom: 1rem;
+}
+
+footer .footer-wrapper .footer-list ul {
+  list-style: none;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+
+footer .footer-wrapper .footer-list ul li {
+  margin-bottom: .5rem;
+}
 /*# sourceMappingURL=styleguide.css.map */

@@ -236,7 +236,7 @@ function tag(tag){
 // create cards
 function createCards(trips) {
   return `
-    <div class="category ${trips.category ? addClass(trips.category) : ''}" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
+    <div class="category ${trips.category ? addClass(trips.category) : ''} card__200" data-value="${trips.value}" data-time="${trips.time}" data-cost="${trips.cost}">
       <img class="card-img" src="${trips.image}" alt="image">
       <div class="card-body">
       <div class="card-tags">${trips.category ? tag(trips.category) : ''}</div>

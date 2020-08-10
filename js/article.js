@@ -117,15 +117,18 @@ reviewContainer = [{
 ]
 
 // Display the reviews
+// Get the data from the objects in the review container and add them to a new array
+//      The function returns the reverse of the array so the last on is the first one in the display.
 let displayReviews = function(reviewContainer) {
-    toDisplay = reviewContainer.map(objects => `
+        toDisplay = reviewContainer.map(objects => `
     <h5><strong>${objects.name}</strong></h5>
     <h5>${objects.rating} <i class="fas fa-star"></i></h5>
     <p>${objects.review}</p>
     <hr>
     `)
-    return toDisplay.reverse()
-}
+        return toDisplay.reverse()
+    }
+    //Display all the reviews
 document.getElementById("display").innerHTML = displayReviews(reviewContainer);
 
 //Submit reviews
@@ -148,24 +151,28 @@ submit.addEventListener("click", function() {
 
 //Add average rating to the top
 
+// Create an array and fill it with the ratings from the review objects
 let ratingArray = [];
 reviewContainer.map(object => {
     ratingArray.push(object.rating);
     return ratingArray
 });
+// Reduce the new array and divide by the length of the array to get the average
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let x = ratingArray.reduce(reducer);
 let average = x / ratingArray.length
 
-
+// Create a function that puts the integer to a proper HTML context
 function averageRating(average) {
     return `<h4><i class="fas fa-star"></i> ${average}</h4>`
 }
 
+// Display the average rating
 document.getElementById("average-rating").innerHTML = averageRating(average);
 
 // Fill the time and cost info
 // Later should be modified to take an object and get the key values from there
+//      or fetch data from a date base.
 
 getTime = function() {
     return `
@@ -193,3 +200,14 @@ getCost = function() {
 
 document.getElementById("travel-time").innerHTML = getTime();
 document.getElementById("travel-cost").innerHTML = getCost();
+
+//Navbar
+const menuIcon = document.getElementById("menu-icon")
+menuIcon.addEventListener("click", () => {
+    let x = document.getElementById("topNav");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+});

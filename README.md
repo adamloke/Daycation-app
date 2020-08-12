@@ -2,6 +2,8 @@
 
 Daycation is an app that lets users browse through a list of curated day trip recommendations near their city.  
 
+[Live Demo](https://daycation.netlify.app)
+
 This is the first project during Wild Code School Web Dev Bootcamp.
 The goal is to build a simple web app using vanilla js.
 

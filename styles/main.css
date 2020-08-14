@@ -260,7 +260,7 @@ footer .footer-wrapper .footer-list ul li {
 
 /* Navigation */
 .navbar {
-  border-bottom: #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
 }
 
 .navbar a {

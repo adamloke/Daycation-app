@@ -9,15 +9,14 @@ The goal is to build a simple web app using vanilla js.
 
 # Features
 
-### Main Page
+- Users can browse through a list of recommendations and filter the result based on their preferred categories (e.g “beach”,  “dog-friendly” ).
 
-- User can browse through a list of recommendations and filter  based on their preferred categories (e.g “beach”,  “dog-friendly” ).
+- Users can sort the trips according to rating, travel cost, and travel time. 
 
-- User can sort the trips according to rating, travel cost and travel time. 
+- Users can explore the location on a map and see nearby restaurants.
+
+- Users can see all travel options with links to travel providers. 
 
 ![Main page showcase](/assets/app-showcase.gif)
 
 
-### Article Page
-
--  

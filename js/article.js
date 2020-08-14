@@ -201,7 +201,7 @@ document.getElementById("average-rating").innerHTML = averageRating(average);
 
 getTime = function() {
     return `
-    <h4>Travel time:</h4>
+    <h4>Travel cost:</h4>
     <ul>
     <li>Train: 1200 HUF</li>
     <li>Bus: none</li>
@@ -213,7 +213,7 @@ getTime = function() {
 
 getCost = function() {
         return `
-    <h4>Estimated cost:</h4>
+    <h4>Estimated time:</h4>
     <ul>
     <li>Train: 1.1 h</li>
     <li>Bus: none</li>

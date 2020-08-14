@@ -259,10 +259,6 @@ footer .footer-wrapper .footer-list ul li {
 }
 
 /* Navigation */
-.navbar {
-  border-bottom: 1px solid #cdcdcd;
-}
-
 .navbar a {
   display: none;
   text-decoration: none;
@@ -300,14 +296,14 @@ footer .footer-wrapper .footer-list ul li {
 
 @media only screen and (min-width: 768px) {
   .navbar {
-    border-bottom: 1px solid #cdcdcd;
     background-color: #fff;
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

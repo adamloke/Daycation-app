@@ -246,7 +246,6 @@ footer {
 /* Navigation */
 
 .navbar {
-    border-bottom: 1px solid $border-light;
 }
 
 .navbar a {
@@ -286,11 +285,10 @@ footer {
 
 @media only screen and (min-width: 768px) {
     .navbar {
-        border-bottom: 1px solid $border-light;
         background-color:#fff;
         overflow: hidden;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         font-family: $font-text;
     }

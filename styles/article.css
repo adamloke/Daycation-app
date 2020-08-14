@@ -376,6 +376,10 @@ footer .footer-wrapper .footer-list ul li {
   margin-top: 50px;
 }
 
+fieldset {
+  border-style: none;
+}
+
 #review {
   height: 350px;
   min-width: 350px;
@@ -410,7 +414,6 @@ footer .footer-wrapper .footer-list ul li {
   text-align: left;
   padding: 20px;
   border-radius: 10px;
-  text-shadow: 0.3px 0.3px 1px gray;
 }
 
 .article-page-function-container {

@@ -361,7 +361,6 @@ footer .footer-wrapper .footer-list ul li {
   max-height: 550px;
   width: 40%;
   overflow-y: scroll;
-  border: 3px outset #cdcdcd;
   padding: 30px;
 }
 
@@ -375,10 +374,6 @@ footer .footer-wrapper .footer-list ul li {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 50px;
-}
-
-.form {
-  border: 3px outset #cdcdcd;
 }
 
 #review {
@@ -668,7 +663,6 @@ footer .footer-wrapper .footer-list ul li {
     -ms-flex-item-align: start;
         align-self: flex-start;
     width: 35%;
-    border: 3px outset #cdcdcd;
     margin: 50px 0px 0px 0px;
     padding: 15px;
   }

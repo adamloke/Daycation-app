@@ -23,7 +23,6 @@
     max-height: 550px;
     width: 40%;
     overflow-y: scroll;
-    border: $default-border;
     padding: 30px;
 }
 
@@ -35,9 +34,7 @@
     margin-top: 50px;
 }
 
-.form {
-    border: $default-border;
-}
+
 
 #review {
     height: 350px;
@@ -268,7 +265,6 @@
         justify-content: center;
         align-self: flex-start;
         width: 35%;
-        border: $default-border;
         margin: 50px 0px 0px 0px;
         padding: 15px;
     }

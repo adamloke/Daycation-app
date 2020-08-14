@@ -1,9 +1,9 @@
 // array with day trips
 const trips = [{
-        image: "https://via.placeholder.com/600x400?text=Day+trip+0",
-        title: "Day trip 0",
+        image: "/assets/lake-velence-1.jpg",
+        title: "Lake Velence",
         url: "/articles/article0.html",
-        value: 0.9,
+        value: 4.9,
         time: 5.2,
         cost: 1000,
         category: ["beach", "foodie"],
@@ -11,7 +11,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+1",
+        image: "/assets/article1.jpg",
         title: "Day trip 1",
         url: "/articles/article1.html",
         value: 2.5,
@@ -22,7 +22,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+2",
+        image: "/assets/article2.jpg",
         title: "Day trip 2",
         url: "/articles/article2.html",
         value: 3.4,
@@ -33,7 +33,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+3",
+        image: "/assets/article3.jpg",
         title: "Day trip 3",
         url: "/articles/article3.html",
         value: 4.5,
@@ -44,10 +44,10 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+4",
+        image: "/assets/article4.jpg",
         title: "Day trip 4",
         url: "/articles/article4.html",
-        value: 4.9,
+        value: 4.2,
         time: 1.0,
         cost: 1500,
         category: ["foodie"],
@@ -55,7 +55,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+5",
+        image: "/assets/article5.jpg",
         title: "Day trip 5",
         url: "/articles/article5.html",
         value: 3.8,
@@ -66,7 +66,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+6",
+        image: "/assets/article6.jpg",
         title: "Day trip 6",
         url: "/articles/article6.html",
         value: 1.4,
@@ -77,7 +77,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+7",
+        image: "/assets/article6.jpg",
         title: "Day trip 7",
         url: "/articles/article7.html",
         value: 4.2,
@@ -88,7 +88,7 @@ const trips = [{
         text: "some body text here"
     },
     {
-        image: "https://via.placeholder.com/600x400?text=Day+trip+8",
+        image: "/assets/article7.jpg",
         title: "Day trip 8",
         url: "/articles/article8.html",
         value: 1.4,

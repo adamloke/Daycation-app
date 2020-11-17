@@ -6,7 +6,7 @@ const trips = [
     url: "#",
     value: 4.9,
     time: 5.2,
-    cost: 1000,
+    cost: 10,
     category: ["beach", "foodie"],
     lead: "If you haven't seen Game of Thrones, go watch it right now. If you have then you'll totally get why this Hodor themed lorem ipsum generator is just brilliant.",
     text: "some body text here",
@@ -17,7 +17,7 @@ const trips = [
     url: "#",
     value: 2.5,
     time: 8.0,
-    cost: 8000,
+    cost: 80,
     category: ["hiking", "dogs"],
     lead: "If you haven't seen Game of Thrones, go watch it right now. If you have then you'll totally get why this Hodor themed lorem ipsum generator is just brilliant.",
     text: "some body text here",
@@ -28,7 +28,7 @@ const trips = [
     url: "#",
     value: 3.4,
     time: 6.5,
-    cost: 500,
+    cost: 5,
     category: ["family", "foodie", "dogs"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -39,7 +39,7 @@ const trips = [
     url: "#",
     value: 4.5,
     time: 0.5,
-    cost: 7000,
+    cost: 70,
     category: ["beach", "foodie", "family"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -50,7 +50,7 @@ const trips = [
     url: "#",
     value: 4.2,
     time: 1.0,
-    cost: 1500,
+    cost: 15,
     category: ["foodie"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -61,7 +61,7 @@ const trips = [
     url: "#",
     value: 3.8,
     time: 1.1,
-    cost: 400,
+    cost: 40,
     category: ["hiking", "family"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -72,7 +72,7 @@ const trips = [
     url: "#",
     value: 1.4,
     time: 9.5,
-    cost: 6000,
+    cost: 6,
     category: ["beach", "foodie"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -83,7 +83,7 @@ const trips = [
     url: "#",
     value: 4.2,
     time: 2.3,
-    cost: 900,
+    cost: 9,
     category: ["beach", "foodie"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -94,7 +94,7 @@ const trips = [
     url: "#",
     value: 1.4,
     time: 4.5,
-    cost: 4500,
+    cost: 45,
     category: ["beach", "family"],
     lead: "In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.",
     text: "some body text here",
@@ -247,14 +247,16 @@ function createCards(trips) {
         <h4>${trips.title}</h4>
         <div class="card-row">
           <div class="card-row-rank">
-            <img class="rank-img" src="/assets/star.svg" alt="star">
+            <p>Rating:</p>
             <strong>${trips.value}</strong>
           </div>
           <div class="card-row-time">
+          <p>Time:</p>
             <strong>${trips.time} hr</strong>
           </div>
           <div class="card-row-cost">
-            <strong>${trips.cost} HUF</strong>
+          <p>Cost:</p>
+            <strong>${trips.cost} €</strong>
           </div>
         </div>
         <div class="card-text">
